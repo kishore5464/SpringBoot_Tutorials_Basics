@@ -16,12 +16,12 @@
    
      i) we need to start by "findBy" because in Spring JPA, "findBy" denotes "select" in MySQL, so we need to start like that.
      
-    ii) eg) we need to find by email means the method name will be
+      ii) eg) we need to find by email means the method name will be
         findByEmail(String email);
         
-   iii) If we are passing more than one parameter also possible, like Or, And operator also we can use.
+     iii) If we are passing more than one parameter also possible, like Or, And operator also we can use.
    
-    iv) eg) findByFirstNameAndEmail(String first_name, String email);
+      iv) eg) findByFirstNameAndEmail(String first_name, String email);
     
         ** Note) If there is an _ in the Getter and Setter method it will through exception while executing server.
                  eg) findByFirst_NameAndEmail(String first_name, String email); --> This will through exception at runtime. so no "_" in Getters and Setters.
