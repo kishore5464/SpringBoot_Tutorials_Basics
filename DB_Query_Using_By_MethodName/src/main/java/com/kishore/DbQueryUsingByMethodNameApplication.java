@@ -26,6 +26,7 @@ public class DbQueryUsingByMethodNameApplication implements CommandLineRunner {
 		// Getting by one parameter
 		createEmployees();
 		getEmployeeByDepartment();
+		getEmployeeByLastNameOrDegree();
 	}
 
 	private void createEmployees() {
@@ -35,6 +36,12 @@ public class DbQueryUsingByMethodNameApplication implements CommandLineRunner {
 				new Employee(6, "Ram", "Kumar", "CS", "ME"), new Employee(7, "Krishna", "Swamy", "CS", "ME"));
 
 		employeeBussinessInterface.createEmployees(emp_list);
+	}
+
+	private void getEmployeeByLastNameOrDegree() {
+		List<Employee> emp_List = employeeBussinessInterface.getEmployeeByLastNameOrDegree("Kumar", "BE");
+		System.out.println("----------------------------------------------------");
+		emp_List.forEach(System.out::println);
 	}
 
 	private void getEmployeeByDepartment() {

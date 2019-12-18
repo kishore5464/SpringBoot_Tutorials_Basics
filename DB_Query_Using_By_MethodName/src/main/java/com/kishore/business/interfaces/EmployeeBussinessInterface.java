@@ -10,4 +10,6 @@ public interface EmployeeBussinessInterface {
 
 	void createEmployees(List<Employee> emp_list);
 
+	List<Employee> getEmployeeByLastNameOrDegree(String department, String degree);
+
 }

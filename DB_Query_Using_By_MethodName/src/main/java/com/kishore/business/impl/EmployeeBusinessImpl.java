@@ -25,4 +25,10 @@ public class EmployeeBusinessImpl implements EmployeeBussinessInterface {
 		employeeDAOInterface.saveAll(emp_list);
 	}
 
+	@Override
+	public List<Employee> getEmployeeByLastNameOrDegree(String last_name, String degree) {
+		// TODO Auto-generated method stub
+		return employeeDAOInterface.findByLastNameOrDegree(last_name, degree);
+	}
+
 }

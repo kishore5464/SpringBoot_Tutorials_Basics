@@ -18,8 +18,8 @@ public class Employee implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Integer id;
-	private String first_name;
-	private String last_name;
+	private String firstName;
+	private String lastName;
 	private String department;
 	private String degree;
 
@@ -28,11 +28,11 @@ public class Employee implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Employee(Integer id, String first_name, String last_name, String department, String degree) {
+	public Employee(Integer id, String firstName, String lastName, String department, String degree) {
 		super();
 		this.id = id;
-		this.first_name = first_name;
-		this.last_name = last_name;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.department = department;
 		this.degree = degree;
 	}
@@ -48,22 +48,22 @@ public class Employee implements Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "first_name")
-	public String getFirst_name() {
-		return first_name;
+	@Column(name = "firstName")
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	@Column(name = "last_name")
-	public String getLast_name() {
-		return last_name;
+	@Column(name = "lastName")
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	@Column(name = "department")
@@ -86,7 +86,7 @@ public class Employee implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + ", department="
+		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", department="
 				+ department + ", degree=" + degree + "]";
 	}
 
