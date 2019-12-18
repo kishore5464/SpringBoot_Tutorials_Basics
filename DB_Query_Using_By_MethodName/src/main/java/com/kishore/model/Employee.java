@@ -18,8 +18,8 @@ public class Employee implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Integer id;
-	private String firstName;
-	private String lastName;
+	private String first_Name;
+	private String last_Name;
 	private String department;
 	private String degree;
 
@@ -28,11 +28,11 @@ public class Employee implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Employee(Integer id, String firstName, String lastName, String department, String degree) {
+	public Employee(Integer id, String first_Name, String last_Name, String department, String degree) {
 		super();
 		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.first_Name = first_Name;
+		this.last_Name = last_Name;
 		this.department = department;
 		this.degree = degree;
 	}
@@ -48,22 +48,22 @@ public class Employee implements Serializable {
 		this.id = id;
 	}
 
-	@Column(name = "firstName")
+	@Column(name = "first_Name")
 	public String getFirstName() {
-		return firstName;
+		return first_Name;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirstName(String first_Name) {
+		this.first_Name = first_Name;
 	}
 
-	@Column(name = "lastName")
+	@Column(name = "last_Name")
 	public String getLastName() {
-		return lastName;
+		return last_Name;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLastName(String last_Name) {
+		this.last_Name = last_Name;
 	}
 
 	@Column(name = "department")
@@ -86,7 +86,7 @@ public class Employee implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", department="
+		return "Employee [id=" + id + ", first_Name=" + first_Name + ", last_Name=" + last_Name + ", department="
 				+ department + ", degree=" + degree + "]";
 	}
 
