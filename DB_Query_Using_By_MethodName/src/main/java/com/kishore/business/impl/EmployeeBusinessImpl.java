@@ -16,8 +16,13 @@ public class EmployeeBusinessImpl implements EmployeeBussinessInterface {
 	private EmployeeDAOInterface employeeDAOInterface;
 
 	@Override
-	public List<Employee> getEmployeeByDegree(String degree) {
-		return employeeDAOInterface.findByDegree(degree);
+	public List<Employee> getEmployeeByDepartment(String department) {
+		return employeeDAOInterface.findByDepartment(department);
+	}
+
+	@Override
+	public void createEmployees(List<Employee> emp_list) {
+		employeeDAOInterface.saveAll(emp_list);
 	}
 
 }

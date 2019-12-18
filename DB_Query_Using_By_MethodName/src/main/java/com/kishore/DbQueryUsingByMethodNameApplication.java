@@ -25,21 +25,20 @@ public class DbQueryUsingByMethodNameApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// Getting by one parameter
 		createEmployees();
-		getEmployeeByDegree();
+		getEmployeeByDepartment();
 	}
 
 	private void createEmployees() {
 		List<Employee> emp_list = Arrays.asList(new Employee(1, "Kishore", "Kumar", "CS", "MCA"),
-				new Employee(2, "Kishore", "Kumar", "CS", "MCA"),
-				new Employee(3, "Kishore", "Kumar", "CS", "MCA"),
-				new Employee(4, "Kishore", "Kumar", "CS", "MCA"),
-				new Employee(5, "Kishore", "Kumar", "CS", "MCA"),
-				new Employee(6, "Kishore", "Kumar", "CS", "MCA"),
-				new Employee(7, "Kishore", "Kumar", "CS", "MCA"));
+				new Employee(2, "Arumugam", "N", "Mech", "BE"), new Employee(3, "Shantha", "Arumugam", "History", "BA"),
+				new Employee(4, "Sudha", "A", "CS", "MCA"), new Employee(5, "Roshini", "Kishore", "ECE", "BE"),
+				new Employee(6, "Ram", "Kumar", "CS", "ME"), new Employee(7, "Krishna", "Swamy", "CS", "ME"));
+
+		employeeBussinessInterface.createEmployees(emp_list);
 	}
 
-	private void getEmployeeByDegree() {
-		List<Employee> emp_List = employeeBussinessInterface.getEmployeeByDegree("BE");
+	private void getEmployeeByDepartment() {
+		List<Employee> emp_List = employeeBussinessInterface.getEmployeeByDepartment("CS");
 		emp_List.forEach(System.out::println);
 	}
 

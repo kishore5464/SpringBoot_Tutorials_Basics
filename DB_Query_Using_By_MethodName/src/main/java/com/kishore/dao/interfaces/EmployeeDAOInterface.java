@@ -10,6 +10,7 @@ import com.kishore.model.Employee;
 @Repository
 public interface EmployeeDAOInterface extends CrudRepository<Employee, Integer> {
 	
-	public List<Employee> findByDegree(String degree);
+	public List<Employee> findByDepartment(String department);
+	
 	
 }

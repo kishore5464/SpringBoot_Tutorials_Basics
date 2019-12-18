@@ -6,6 +6,8 @@ import com.kishore.model.Employee;
 
 public interface EmployeeBussinessInterface {
 
-	List<Employee> getEmployeeByDegree(String string);
+	List<Employee> getEmployeeByDepartment(String department);
+
+	void createEmployees(List<Employee> emp_list);
 
 }
