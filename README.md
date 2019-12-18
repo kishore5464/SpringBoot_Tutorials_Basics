@@ -13,6 +13,7 @@
    * Here i used my defined method name.
      eg) Previously we used existing method names like find, findAll by passing only by Id's, but here we are using our method and passing different parameters. Like Degree, Department, Last Name.
    * For this we need to create our methods but there are certain conditions are there, they are,
+   
      i) we need to start by "findBy" because in Spring JPA, "findBy" denotes "select" in MySQL, so we need to start like that.
      
     ii) eg) we need to find by email means the method name will be
