@@ -12,13 +12,13 @@ import com.kishore.business.interfaces.EmployeeBussinessInterface;
 import com.kishore.model.Employee;
 
 @SpringBootApplication
-public class DbQueryUsingByMethodNameApplication implements CommandLineRunner {
+public class DbQueryUsingByNamedNativeQueriesApplication implements CommandLineRunner {
 
 	@Autowired
 	private EmployeeBussinessInterface employeeBussinessInterface;
 
 	public static void main(String[] args) {
-		SpringApplication.run(DbQueryUsingByMethodNameApplication.class, args);
+		SpringApplication.run(DbQueryUsingByNamedNativeQueriesApplication.class, args);
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class DbQueryUsingByMethodNameApplication implements CommandLineRunner {
 	}
 
 	private void getEmployeeByLastNameOrDegree() {
-		List<Employee> emp_List = employeeBussinessInterface.getEmployeeByLastNameOrDegree("Kumar", "BE");
+		List<Employee> emp_List = employeeBussinessInterface.getEmployeeByLastNameOrDegree("Kumar", "ME");
 		System.out.println("----------------------------------------------------");
 		emp_List.forEach(System.out::println);
 	}

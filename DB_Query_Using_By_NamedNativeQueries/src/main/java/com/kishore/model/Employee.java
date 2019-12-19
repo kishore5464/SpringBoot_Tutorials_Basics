@@ -7,10 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "employee")
+@Table(name = "employee_table")
+@NamedNativeQueries(value = {
+		@NamedNativeQuery(name = "Employee.findByDepartment", query = "SELECT * FROM employee_table WHERE department = ?1", resultClass = Employee.class),
+		@NamedNativeQuery(name = "Employee.getLast_NameOrDegree", query = "SELECT * FROM employee_table WHERE last_Name = ?1 AND degree = ?2", resultClass = Employee.class) })
 public class Employee implements Serializable {
 	/**
 	 * 
