@@ -25,3 +25,8 @@
       
        ** Note) If there is an _ in the Getter and Setter method it will through exception while executing server.
                  eg) findByFirst_NameAndEmail(String first_name, String email); --> This will through exception at runtime. so no "_" in Getters and Setters.
+5. DB Query Using Named Query
+   * Here we are using @NamedQuery Annotation to execute our SQL query, because table name may vary from Entity to Table, so we used @NamedQuery to find the Entity its assigned.
+   * More Important thing is once we declare the query in the Entity class above and in last we need to give resultClass = that EntityName.class to identification purpose, otherwise it will through compile time error.
+6. DB Query Using Named Native Query
+   * Here we are using @NamedNativeQuery to
