@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.kishore</groupId>
-	<artifactId>AsyncQueryResult_1</artifactId>
+	<artifactId>Basic_AsyncQueryResult</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>AsyncQueryResult_1</name>
+	<name>Basic_AsyncQueryResult</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

@@ -1,7 +1,6 @@
 package com.kishore.dao.interfaces;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.concurrent.ListenableFuture;
 

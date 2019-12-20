@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.util.concurrent.ListenableFuture;
 
 import com.kishore.business.interfaces.EmployeeBussinessInterface;
@@ -18,13 +17,13 @@ import com.kishore.model.Employee;
 
 @SpringBootApplication
 //@EnableAsync
-public class AsyncQueryResult1Application implements CommandLineRunner {
+public class AsyncQueryResultApplication implements CommandLineRunner {
 
 	@Autowired
 	private EmployeeBussinessInterface employeeBussinessInterface;
 
 	public static void main(String[] args) {
-		SpringApplication.run(AsyncQueryResult1Application.class, args);
+		SpringApplication.run(AsyncQueryResultApplication.class, args);
 	}
 
 	@Override
@@ -36,11 +35,11 @@ public class AsyncQueryResult1Application implements CommandLineRunner {
 	private void findByFirstName(String firstName) throws InterruptedException, ExecutionException, TimeoutException {
 		// TODO Auto-generated method stub
 //		Future<Employee> empList = employeeBussinessInterface.findByFirstName(firstName);
-		
+
 //		CompletableFuture<Employee> empList = employeeBussinessInterface.findByFirstName(firstName);
-		
+
 		ListenableFuture<Employee> empList = employeeBussinessInterface.findByFirstName(firstName);
-		
+
 		Employee emp = empList.get(1, TimeUnit.SECONDS);
 		if (empList.isDone()) {
 			System.out.println("Employee => " + emp.toString() + "\n");
