@@ -14,7 +14,7 @@ public interface EmployeeDAOInterface extends CrudRepository<Employee, Integer> 
 	@Query(value = "SELECT e FROM Employee e WHERE e.department = ?1")
 	public List<Employee> findByDepartment(String department);
 
-	@Query(value = "SELECT * FROM employee_table WHERE last_Name = ?1 AND degree = ?2", nativeQuery = true)
+	@Query(value = "SELECT emp FROM Employee emp WHERE emp.lastName = ?1 OR emp.degree = ?2")
 	public List<Employee> getLast_NameOrDegree(String last_name, String degree);
 
 }
