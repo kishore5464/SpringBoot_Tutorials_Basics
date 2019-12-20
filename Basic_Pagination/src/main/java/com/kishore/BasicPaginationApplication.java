@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort.Direction;
 
 import com.kishore.business.interfaces.EmployeeBussinessInterface;
 import com.kishore.model.Employee;
@@ -15,7 +17,7 @@ import com.kishore.model.Employee;
 public class BasicPaginationApplication implements CommandLineRunner {
 
 	@Autowired
-	EmployeeBussinessInterface employeeBussinessInterface;
+	private EmployeeBussinessInterface employeeBussinessInterface;
 
 	public static void main(String[] args) {
 		SpringApplication.run(BasicPaginationApplication.class, args);
@@ -24,6 +26,15 @@ public class BasicPaginationApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		insertEmployees();
+		getEmployeeUsingPagination();
+	}
+
+	private void getEmployeeUsingPagination() {
+		List<Employee> employeesList = employeeBussinessInterface.findByGender("Female",
+				PageRequest.of(1, 3, Direction.ASC, "gender"));
+		System.out.println("\n------------------------------------------------------------------------------------\n");
+		employeesList.forEach(System.out::println);
+		System.out.println("\n------------------------------------------------------------------------------------\n");
 	}
 
 	private void insertEmployees() {
