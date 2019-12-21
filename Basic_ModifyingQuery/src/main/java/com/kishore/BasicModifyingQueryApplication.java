@@ -25,6 +25,7 @@ public class BasicModifyingQueryApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		insertEmployees();
+		System.out.println();
 		getEmployeeBeforeUpdate(10);
 		updateEmployeeLastName(10, "Thaniga Arasu");
 		getEmployeeAfterUpdate(10);
