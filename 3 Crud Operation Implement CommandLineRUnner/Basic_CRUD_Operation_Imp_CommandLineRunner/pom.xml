@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.kishore</groupId>
-	<artifactId>Basic_CRUD_Operation</artifactId>
+	<artifactId>Basic_CRUD_Operation_CommandLineRunner</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Basic_CRUD_Operation</name>
+	<name>Basic_CRUD_Operation_CommandLineRunner</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
