@@ -12,13 +12,13 @@ import com.kishore.business.interfaces.EmployeeBussinessInterface;
 import com.kishore.model.Employee;
 
 @SpringBootApplication
-public class DbQueryUsingByNamedNativeQueriesApplication implements CommandLineRunner {
+public class DbQueryUsingByNamedNativeQueryApplication implements CommandLineRunner {
 
 	@Autowired
 	private EmployeeBussinessInterface employeeBussinessInterface;
 
 	public static void main(String[] args) {
-		SpringApplication.run(DbQueryUsingByNamedNativeQueriesApplication.class, args);
+		SpringApplication.run(DbQueryUsingByNamedNativeQueryApplication.class, args);
 	}
 
 	@Override
