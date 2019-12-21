@@ -13,7 +13,7 @@ import com.kishore.business.interfaces.Business_Shopping_Interface;
 import com.kishore.entity.Shopping_Cart;
 
 @SpringBootApplication
-public class BasicCrudOperationApplication implements CommandLineRunner {
+public class BasicCrudOperationCommandLineRunnerApplication implements CommandLineRunner {
 
 	@Autowired
 	private Business_Shopping_Interface business_Shopping_Interface;
@@ -23,7 +23,7 @@ public class BasicCrudOperationApplication implements CommandLineRunner {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(BasicCrudOperationApplication.class, args);
+		SpringApplication.run(BasicCrudOperationCommandLineRunnerApplication.class, args);
 
 	}
 
