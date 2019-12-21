@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.kishore</groupId>
-	<artifactId>DB_Query_Using_By_NamedQueries</artifactId>
+	<artifactId>DB_Query_Using_By_NamedQuery</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>DB_Query_Using_By_NamedQueries</name>
+	<name>DB_Query_Using_By_NamedQuery</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
