@@ -1,0 +1,28 @@
+2019-12-22 02:02:15 - InetAddress.getLocalHost().getHostName() took 5003 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2019-12-22 02:02:20 - Starting LoggerApplication on Kishores-MacBook-Air.local with PID 1616 (started by kishorekumar in /Users/kishorekumar/STS/SpringBoot_Tutorials/13. Logging Configuration/Logger)
+2019-12-22 02:02:20 - No active profile set, falling back to default profiles: default
+2019-12-22 02:02:21 - Tomcat initialized with port(s): 8080 (http)
+2019-12-22 02:02:21 - Starting service [Tomcat]
+2019-12-22 02:02:21 - Starting Servlet engine: [Apache Tomcat/9.0.29]
+2019-12-22 02:02:21 - Initializing Spring embedded WebApplicationContext
+2019-12-22 02:02:21 - Root WebApplicationContext: initialization completed in 798 ms
+2019-12-22 02:02:21 - Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-22 02:02:22 - Stopping service [Tomcat]
+2019-12-22 02:02:22 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-22 02:02:22 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2019-12-22 02:02:22 - Shutting down ExecutorService 'applicationTaskExecutor'
