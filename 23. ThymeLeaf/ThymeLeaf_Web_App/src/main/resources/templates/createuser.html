@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Boot Thymeleaf</title>
+<link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+	<h2></h2>
+	<h1>Create User</h1>
+	<form action="#" th:action="@{/createuser}" th:object="${user}"
+		method="POST">
+		<table>
+			<tr>
+				<td>User ID</td>
+				<td><input type="text" th:field="*{userId}" /> <label
+					th:if="${#fields.hasErrors('userId')}" th:class="'error'">Enter
+						Id</label></td>
+			</tr>
+			<tr>
+				<td>User Name</td>
+				<td><input type="text" th:field="*{userName}" /> <label
+					th:if="${#fields.hasErrors('userName')}" th:class="'error'">Enter
+						User Name</label></td>
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<td><input type="radio" th:field="*{gender}" value="Male" /><label>Male</label>
+					<input type="radio" th:field="*{gender}" value="Female" /><label>Female</label>
+					<label th:if="${#fields.hasErrors('gender')}" th:class="'error'">Select
+						Gender</label></td>
+			</tr>
+			<tr>
+				<td>Married?</td>
+				<td><input type="checkbox" th:field="*{married}" /></td>
+			</tr>
+			<tr>
+				<td>Profile</td>
+				<td><select th:field="*{profile}">
+						<option th:each="profile : ${allProfiles}" th:value="${profile}"
+							th:text="${profile}">Profile</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" th:value="Submit" /> <input
+					type="reset" th:value="Reset" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
