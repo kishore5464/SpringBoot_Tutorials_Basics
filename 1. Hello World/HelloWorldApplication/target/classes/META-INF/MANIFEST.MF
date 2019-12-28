@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: HelloWorldApplication
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: kishorekumar
+Implementation-Vendor-Id: com.kishore
+Build-Jdk: 1.8.0_231
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/HelloWorldApplication
+Created-By: Maven Integration for Eclipse
+

@@ -5,26 +5,26 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 
 @EnableWebSecurity
 public class Security_Config extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests().antMatchers("/college/department/**").hasAnyAuthority("admin", "user")
-				.and().formLogin();
-
-		http.csrf().disable().authorizeRequests().antMatchers("/college/student/**").hasAnyAuthority("user").and()
+		http.csrf().disable().authorizeRequests().antMatchers("/department/**").hasAnyAuthority("admin", "user").and()
 				.formLogin();
+
+		http.csrf().disable().authorizeRequests().antMatchers("/student/**").hasAnyAuthority("user").and().formLogin();
 	}
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
 
-		authenticationManagerBuilder.inMemoryAuthentication().withUser("roshini").password("{noop}roshini@123")
-				.roles("user");
-		authenticationManagerBuilder.inMemoryAuthentication().withUser("kishore").password("{noop}kicha@123")
-				.roles("admin, user");
+		authenticationManagerBuilder.inMemoryAuthentication().passwordEncoder(NoOpPasswordEncoder.getInstance())
+				.withUser("roshini").password("rose@123").roles("user");
+		authenticationManagerBuilder.inMemoryAuthentication().passwordEncoder(NoOpPasswordEncoder.getInstance())
+				.withUser("kishore").password("kicha@123").roles("admin, user");
 	}
 
 }
