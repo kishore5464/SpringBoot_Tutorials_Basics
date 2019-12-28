@@ -44,7 +44,7 @@ public class College_Business_Impl implements College_Business_Interface {
 	public void createDepartmentAndStudent(Department department, Student student) {
 		Department dept = department_Repository.save(department);
 
-		student.setDepartment(dept);
+		student.setDepartmentId(dept.getId());
 		student_Repository.save(student);
 	}
 

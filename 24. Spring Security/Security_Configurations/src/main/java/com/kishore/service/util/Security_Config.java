@@ -12,10 +12,10 @@ public class Security_Config extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests().antMatchers("/department/**").hasAnyAuthority("admin", "user").and()
+		http.csrf().disable().authorizeRequests().antMatchers("/department/**").hasAnyRole("admin", "user").and()
 				.formLogin();
 
-		http.csrf().disable().authorizeRequests().antMatchers("/student/**").hasAnyAuthority("user").and().formLogin();
+		http.csrf().disable().authorizeRequests().antMatchers("/student/**").hasAnyRole("user").and().formLogin();
 	}
 
 	@Autowired

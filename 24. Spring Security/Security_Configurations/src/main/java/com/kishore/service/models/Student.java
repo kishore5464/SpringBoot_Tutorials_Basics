@@ -26,19 +26,19 @@ public class Student implements Serializable {
 	private Long mobile;
 	private String email;
 
-	private Department department;
+	private Integer departmentId;
 
 	public Student() {
 		super();
 	}
 
-	public Student(Integer id, String name, Long mobile, String email, Department department) {
+	public Student(Integer id, String name, Long mobile, String email, Integer departmentId) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.mobile = mobile;
 		this.email = email;
-		this.department = department;
+		this.departmentId = departmentId;
 	}
 
 	@Id
@@ -79,20 +79,18 @@ public class Student implements Serializable {
 		this.email = email;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "department_id")
-	public Department getDepartment() {
-		return department;
+	public Integer getDepartmentId() {
+		return departmentId;
 	}
 
-	public void setDepartment(Department department) {
-		this.department = department;
+	public void setDepartmentId(Integer departmentId) {
+		this.departmentId = departmentId;
 	}
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", mobile=" + mobile + ", email=" + email + ", department="
-				+ department + "]";
+		return "Student [id=" + id + ", name=" + name + ", mobile=" + mobile + ", email=" + email + ", departmentId="
+				+ departmentId + "]";
 	}
 
 }

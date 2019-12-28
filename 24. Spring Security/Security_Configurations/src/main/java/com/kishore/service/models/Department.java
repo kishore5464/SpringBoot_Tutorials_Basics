@@ -6,10 +6,10 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -59,7 +59,8 @@ public class Department implements Serializable {
 		this.department_name = department_name;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "department")
+	@OneToMany
+	@JoinColumn(name = "departmentId")
 	public Set<Student> getStudents() {
 		return students;
 	}
