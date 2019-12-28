@@ -15,4 +15,6 @@ public interface College_Business_Interface {
 
 	public Department findDepartmentById(Integer department_Id);
 
+	public void createDepartmentAndStudent(Department department, Student student);
+
 }

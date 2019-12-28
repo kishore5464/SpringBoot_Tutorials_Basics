@@ -40,4 +40,12 @@ public class College_Business_Impl implements College_Business_Interface {
 		return department_Repository.getOne(department_Id);
 	}
 
+	@Override
+	public void createDepartmentAndStudent(Department department, Student student) {
+		Department dept = department_Repository.save(department);
+
+		student.setDepartment(dept);
+		student_Repository.save(student);
+	}
+
 }
