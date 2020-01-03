@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kishore.dao.UserInfoDAO;
@@ -15,7 +16,7 @@ import com.kishore.entities.UserInfo;
 @Transactional
 public class UserInfoDAOImpl implements UserInfoDAO {
 
-	@PersistenceContext
+	@Autowired
 	private EntityManager entityManager;
 
 	public UserInfo getActiveUser(String userName) {
