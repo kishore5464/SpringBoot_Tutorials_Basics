@@ -44,6 +44,10 @@
 	              <input type="reset" th:value="#{user.form.reset}"/>
 	            </td>
 	        </tr>
+	        
+	        <p th:text="'Language: ' + ${langCode} + '-> Language Name: ' + ${langName}" />
+	        <p th:text="'Country: ' + ${countryCode} + '-> Country Name: ' + ${countryName}" />
+	        
 	      </table>  
 	    </form>
 	</body>

@@ -2,7 +2,9 @@ package com.kishore.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +24,23 @@ public class UserController {
 	private User_Business_Impl user_Business_Impl;
 
 	@GetMapping("/createuser")
-	public ModelAndView createNewUser() {
+	public ModelAndView createNewUser(HttpServletRequest httpServletRequest) {
 		ModelAndView modelAndView = new ModelAndView("createuser");
 		modelAndView.addObject("user", new Users());
 		modelAndView.addObject("allProfiles", getProfiles());
+
+		Locale locale = httpServletRequest.getLocale();
+		String countryCode = locale.getCountry();
+		String countryName = locale.getDisplayCountry();
+
+		String langCode = locale.getLanguage();
+		String langName = locale.getDisplayLanguage();
+
+		modelAndView.addObject("countryCode", countryCode);
+		modelAndView.addObject("countryName", countryName);
+		modelAndView.addObject("langCode", langCode);
+		modelAndView.addObject("langName", langName);
+
 		return modelAndView;
 	}
 
